@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- index.html
+Search reference pages: https://www.joyagoosheets.com/ (categories and QC photos),
+https://sopel.fit/joyagoo-spreadsheet (large catalog), https://www.joyagoosheet.net/ (product discovery and guides).
+Exact Google first-page placements were not verified. This page adds verified CAFANS listing links,
+a filterable price table and a landed-cost calculator.
+Indexing status: not submitted. Publish at a public URL, then request indexing in Google Search Console
+and submit the URL in Bing Webmaster Tools using verified properties.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index,follow">
+<title>JoyaGoo spreadsheet | CAFANS Finds &amp; Cost Calculator</title>
+<meta name="description" content="Browse CAFANS shoes, hoodies, T-shirts and jackets in a JoyaGoo spreadsheet companion. Compare listing prices and estimate your total order cost.">
+<style>
+:root{color-scheme:dark;--bg:#0c1714;--panel:#152720;--line:#37594a;--text:#eef8f1;--muted:#b7cebf;--mint:#aff0b9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.6 system-ui,sans-serif}
+main,footer{width:min(100% - 2rem,68rem);margin-inline:auto}
+header{text-align:center;padding:clamp(3rem,8vw,7rem) 1rem;background:radial-gradient(ellipse at top,#254b37,var(--bg) 75%)}
+h1,h2,h3{line-height:1.1;margin:0 0 .8rem}
+h1{font-size:clamp(2.6rem,8vw,6rem);letter-spacing:-.06em}
+header p{max-width:36rem;margin:0 auto 1.5rem;color:var(--muted)}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem}
+.actions a{border:1px solid var(--mint);padding:.7rem 1.1rem;border-radius:2rem;font-weight:750;text-decoration:none}
+.actions a:first-child{background:var(--mint);color:var(--bg)}
+a{color:var(--mint);text-underline-offset:.2em}
+a:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:1.2rem;padding:clamp(1rem,4vw,2rem);margin-bottom:1.25rem}
+p{margin:.5rem 0 1rem}
+.note,footer{color:var(--muted)}
+.table{overflow:auto}
+table{border-collapse:collapse;width:100%;text-align:left}
+th,td{padding:.7rem .5rem;border-bottom:1px solid var(--line)}
+th:last-child,td:last-child{text-align:right;white-space:nowrap}
+.controls,.fields{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}
+label{display:grid;gap:.25rem}
+input,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:.45rem;padding:.45rem .65rem;max-width:100%}
+input[type=number]{width:10rem}
+output{font-size:1.5rem;color:var(--mint);font-weight:750}
+details{padding:.75rem 0;border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700}
+footer{padding:.5rem 0 2rem;text-align:center}
+</style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/bptjp/">
+</head>
+<body>
+<header>
+<h1>JoyaGoo spreadsheet</h1>
+<p>Compare shoes, streetwear and outerwear from CAFANS. Save the exact listings you like and estimate your order total before purchasing.</p>
+<div class="actions">
+<a href="https://cafans.com">JoyaGoo spreadsheet</a>
+<a href="https://cafans.com">Buy it now</a>
+</div>
+</header>
+<main>
+<section>
+<h2>What to save with each find</h2>
+<p>Save the listing URL, seller, color, size and the date you checked the price. For shoes, distinguish foot length from insole length. For clothing, compare chest width and garment length with something you already own. Check whether your agent accepts the seller link and can provide warehouse photos for the selected option.</p>
+</section>
+<section aria-labelledby="catalog">
+<h2 id="catalog">CAFANS product catalog</h2>
+<p class="note">Featured listings from CAFANS. USD prices are a snapshot. Open a listing to check the current price and options.</p>
+<div class="controls" id="filters" hidden>
+<label>Category
+<select id="category">
+<option value="">All categories</option>
+<option>Shoes</option><option>Hoodies / Sweaters</option><option>T-Shirts</option><option>Jackets</option>
+</select>
+</label>
+</div>
+<div class="table">
+<table>
+<thead><tr><th scope="col">Product</th><th scope="col">Category</th><th scope="col">Listed USD</th></tr></thead>
+<tbody id="products">
+<tr><th scope="row"><a href="https://cafans.com/goods-158791.html">Leather Slides</a></th><td>Shoes</td><td>$62.36</td></tr>
+<tr><th scope="row"><a href="https://cafans.com/goods-158280.html">Thug Club – Rock Hoodie</a></th><td>Hoodies / Sweaters</td><td>$37.22</td></tr>
+<tr><th scope="row"><a href="https://cafans.com/goods-158200.html">Unisex Embroidered Oversized T-Shirt</a></th><td>T-Shirts</td><td>$32.64</td></tr>
+<tr><th scope="row"><a href="https://cafans.com/goods-158279.html">Corteiz Jacket</a></th><td>Jackets</td><td>$42.78</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-labelledby="estimate">
+<h2 id="estimate">Estimate your total order cost</h2>
+<p>Use quotes in USD. Include any agent fees, packaging and estimated duties in the last field.</p>
+<form id="calculator" hidden>
+<div class="fields">
+<label>Items ($)<input type="number" min="0" step="0.01" inputmode="decimal" value="0"></label>
+<label>Domestic shipping ($)<input type="number" min="0" step="0.01" inputmode="decimal" value="0"></label>
+<label>International shipping ($)<input type="number" min="0" step="0.01" inputmode="decimal" value="0"></label>
+<label>Other costs ($)<input type="number" min="0" step="0.01" inputmode="decimal" value="0"></label>
+</div>
+<label>Estimated total <output id="total">$0.00</output></label>
+</form>
+<noscript><p>Add the item subtotal, domestic shipping, international shipping and other costs.</p></noscript>
+</section>
+<section>
+<h2>JoyaGoo spreadsheet questions</h2>
+<details><summary>Where do these products come from?</summary><p>These entries come from CAFANS. The two main buttons open the CAFANS homepage, and each product name opens its listing. Check agent compatibility before ordering.</p></details>
+<details><summary>What should I check in warehouse photos?</summary><p>Compare the color, size label, measurements and visible condition with the option you ordered. Ask about exchanges before the return window closes.</p></details>
+<details><summary>Why can shipping quotes change?</summary><p>The destination, shipping line and packed parcel dimensions can change the quote. Ask whether the line bills by actual or volumetric weight and check which fees are included.</p></details>
+</section>
+</main>
+<footer>Independent shopping guide · Product listings sourced from CAFANS</footer>
+<script>
+const category = document.querySelector('#category');
+const rows = document.querySelectorAll('#products tr');
+document.querySelector('#filters').hidden = false;
+category.addEventListener('change', () => {
+  for (const row of rows) {
+    row.hidden = Boolean(category.value) && row.cells[1].textContent !== category.value;
+  }
+});
+const calculator = document.querySelector('#calculator');
+const fields = [...calculator.querySelectorAll('input')];
+const total = document.querySelector('#total');
+const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+calculator.hidden = false;
+calculator.addEventListener('submit', event => event.preventDefault());
+calculator.addEventListener('input', () => {
+  if (!calculator.checkValidity()) {
+    total.value = 'Enter valid amounts';
+    return;
+  }
+  const cents = fields.reduce((sum, field) => sum + Math.round((field.valueAsNumber || 0) * 100), 0);
+  total.value = Number.isSafeInteger(cents) ? usd.format(cents / 100) : 'Enter smaller amounts';
+});
+</script>
+<style>[hidden]{display:none!important}</style>
+</body>
+</html>
